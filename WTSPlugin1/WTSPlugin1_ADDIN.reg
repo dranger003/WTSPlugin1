@@ -1,0 +1,4 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default\AddIns\WTSPlugin1]
+"Name"="{D5633330-784B-4A82-93B4-DBDC4A86A128}"

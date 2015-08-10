@@ -1,0 +1,29 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\WTSPlugin1.WTSPlugin1]
+@="WTSPlugin1.WTSPlugin1"
+
+[HKEY_CLASSES_ROOT\WTSPlugin1.WTSPlugin1\CLSID]
+@="{D5633330-784B-4A82-93B4-DBDC4A86A128}"
+
+[HKEY_CLASSES_ROOT\CLSID\{D5633330-784B-4A82-93B4-DBDC4A86A128}]
+@="WTSPlugin1.WTSPlugin1"
+
+[HKEY_CLASSES_ROOT\CLSID\{D5633330-784B-4A82-93B4-DBDC4A86A128}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="WTSPlugin1.WTSPlugin1"
+"Assembly"="WTSPlugin1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5367d3e3a940f7fe"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///C:/Users/dranger003/Documents/Visual Studio 2015/Projects/WTSPlugin1/WTSPlugin1/bin/x64/Debug/WTSPlugin1.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{D5633330-784B-4A82-93B4-DBDC4A86A128}\InprocServer32\1.0.0.0]
+"Class"="WTSPlugin1.WTSPlugin1"
+"Assembly"="WTSPlugin1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5367d3e3a940f7fe"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///C:/Users/dranger003/Documents/Visual Studio 2015/Projects/WTSPlugin1/WTSPlugin1/bin/x64/Debug/WTSPlugin1.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{D5633330-784B-4A82-93B4-DBDC4A86A128}\ProgId]
+@="WTSPlugin1.WTSPlugin1"
+
+[HKEY_CLASSES_ROOT\CLSID\{D5633330-784B-4A82-93B4-DBDC4A86A128}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
