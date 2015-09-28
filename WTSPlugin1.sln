@@ -9,26 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "Cons
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
-		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3554763C-11B6-4535-9372-FCABE8B34360}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{3554763C-11B6-4535-9372-FCABE8B34360}.Debug|x64.ActiveCfg = Debug|x64
 		{3554763C-11B6-4535-9372-FCABE8B34360}.Debug|x64.Build.0 = Debug|x64
-		{3554763C-11B6-4535-9372-FCABE8B34360}.Release|Any CPU.ActiveCfg = Release|x64
 		{3554763C-11B6-4535-9372-FCABE8B34360}.Release|x64.ActiveCfg = Release|x64
 		{3554763C-11B6-4535-9372-FCABE8B34360}.Release|x64.Build.0 = Release|x64
-		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Debug|x64.Build.0 = Debug|Any CPU
-		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Release|x64.ActiveCfg = Release|Any CPU
-		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Release|x64.Build.0 = Release|Any CPU
+		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Debug|x64.ActiveCfg = Debug|x64
+		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Debug|x64.Build.0 = Debug|x64
+		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Release|x64.ActiveCfg = Release|x64
+		{89746FF1-E59D-4D22-A1E6-2075E99AAD99}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

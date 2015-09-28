@@ -14,11 +14,29 @@ namespace ConsoleApplication1
 
         public const UInt32 DUPLICATE_SAME_ACCESS = 0x00000002;
 
+        public const UInt32 CHANNEL_FLAG_MIDDLE = 0;
+        public const UInt32 CHANNEL_FLAG_FIRST = 0x01;
+        public const UInt32 CHANNEL_FLAG_LAST = 0x02;
+        public const UInt32 CHANNEL_FLAG_ONLY = (CHANNEL_FLAG_FIRST | CHANNEL_FLAG_LAST);
+
         public enum WTS_VIRTUAL_CLASS
         {
             WTSVirtualClientData,
             WTSVirtualFileHandle
         }
+
+        //typedef struct tagCHANNEL_PDU_HEADER
+        //{
+        //    UINT32 length;                 /* Length of data excluding header    */
+        //    UINT32 flags;                  /* CHANNEL_FLAG_xxx flags             */
+        //}
+        //CHANNEL_PDU_HEADER, FAR* PCHANNEL_PDU_HEADER;
+        [StructLayout(LayoutKind.Sequential)]
+        public struct CHANNEL_PDU_HEADER
+        {
+            public UInt32 length;
+            public UInt32 flags;
+        };
 
         //HANDLE
         //WINAPI
@@ -116,6 +134,25 @@ namespace ConsoleApplication1
             byte[] lpBuffer,
             UInt32 nNumberOfBytesToWrite,
             out UInt32 lpNumberOfBytesWritten,
+            IntPtr lpOverlapped);
+
+        //WINBASEAPI
+        //_Must_inspect_result_
+        //BOOL
+        //WINAPI
+        //ReadFile(
+        //    _In_ HANDLE hFile,
+        //    _Out_writes_bytes_to_opt_(nNumberOfBytesToRead, * lpNumberOfBytesRead) __out_data_source(FILE) LPVOID lpBuffer,
+        //    _In_ DWORD nNumberOfBytesToRead,
+        //    _Out_opt_ LPDWORD lpNumberOfBytesRead,
+        //    _Inout_opt_ LPOVERLAPPED lpOverlapped
+        //);
+        [DllImport("kernel32", SetLastError = true)]
+        public static extern Boolean ReadFile(
+            IntPtr hFile,
+            byte[] lpBuffer,
+            UInt32 nNumberOfBytesToRead,
+            out UInt32 lpNumberOfBytesRead,
             IntPtr lpOverlapped);
     }
 }
