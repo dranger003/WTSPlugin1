@@ -3,6 +3,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 
 namespace ConsoleApplication1
 {
@@ -38,7 +39,9 @@ namespace ConsoleApplication1
                         ptr = IntPtr.Zero;
 
                         var data = Encoding.UTF8.GetBytes("PING");
-                        if (PInvoke.WriteFile(file, data, (uint)data.Length, out bytes, IntPtr.Zero))
+
+                        var ovl = new NativeOverlapped();
+                        if (PInvoke.WriteFile(file, data, (uint)data.Length, out bytes, ref ovl))
                         {
                             var header = new PInvoke.CHANNEL_PDU_HEADER();
 

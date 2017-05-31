@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace ConsoleApplication1
 {
@@ -135,6 +136,14 @@ namespace ConsoleApplication1
             UInt32 nNumberOfBytesToWrite,
             out UInt32 lpNumberOfBytesWritten,
             IntPtr lpOverlapped);
+
+        [DllImport("kernel32", SetLastError = true)]
+        public static extern Boolean WriteFile(
+        IntPtr hFile,
+        byte[] lpBuffer,
+        UInt32 nNumberOfBytesToWrite,
+        out UInt32 lpNumberOfBytesWritten,
+        ref NativeOverlapped lpOverlapped);
 
         //WINBASEAPI
         //_Must_inspect_result_
