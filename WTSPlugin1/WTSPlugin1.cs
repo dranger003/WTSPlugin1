@@ -158,6 +158,8 @@ namespace WTSPlugin1
     [Guid("D5633330-784B-4A82-93B4-DBDC4A86A128")]
     public class WTSPlugin1 : IWTSPlugin1, IWTSPlugin, IWTSListenerCallback, IWTSVirtualChannelCallback
     {
+        private IWTSVirtualChannel _channel;
+
         public WTSPlugin1()
         {
             System.Diagnostics.Debug.WriteLine("[WTSPlugin1] WTSPlugin1.WTSPlugin1()");
@@ -209,6 +211,8 @@ namespace WTSPlugin1
         {
             System.Diagnostics.Debug.WriteLine("[WTSPlugin1] WTSPlugin1.OnNewChannelConnection()");
 
+            _channel = pChannel;
+
             pbAccept = true;
             ppCallback = this;
         }
@@ -218,7 +222,10 @@ namespace WTSPlugin1
         public void OnDataReceived(uint cbSize, byte[] pBuffer)
         {
             System.Diagnostics.Debug.WriteLine("[WTSPlugin1] WTSPlugin1.OnDataReceived()");
-            System.Diagnostics.Debug.WriteLine(String.Format("[WTSPlugin1] WTSPlugin1.OnDataReceived(): [{0}]", Encoding.ASCII.GetString(pBuffer)));
+            //System.Diagnostics.Debug.WriteLine(String.Format("[WTSPlugin1] WTSPlugin1.OnDataReceived(): [{0}]", Encoding.ASCII.GetString(pBuffer)));
+
+            var bytes = Encoding.UTF8.GetBytes($"cbSize = {cbSize}");
+            _channel.Write((uint)bytes.Length, bytes, null);
         }
 
         public void OnClose()

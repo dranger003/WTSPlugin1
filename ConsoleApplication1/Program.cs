@@ -38,10 +38,13 @@ namespace ConsoleApplication1
                         PInvoke.WTSFreeMemory(ptr);
                         ptr = IntPtr.Zero;
 
-                        var data = Encoding.UTF8.GetBytes("PING");
+                        var data = File.ReadAllBytes(@"X:\1G-FILE.dat");
 
                         var ovl = new NativeOverlapped();
-                        if (PInvoke.WriteFile(file, data, (uint)data.Length, out bytes, ref ovl))
+                        ovl.EventHandle = PInvoke.CreateEvent(IntPtr.Zero, true, false, null);
+
+                        PInvoke.WriteFile(file, data, (uint)data.Length, out bytes, IntPtr.Zero);
+                        if (PInvoke.GetOverlappedResult(file, ref ovl, out bytes, true))
                         {
                             var header = new PInvoke.CHANNEL_PDU_HEADER();
 
@@ -86,6 +89,7 @@ namespace ConsoleApplication1
                 Console.WriteLine("WTSVirtualChannelOpenEx(): {0}", Marshal.GetLastWin32Error());
             }
 
+            Console.WriteLine("\nPress <any key> to continue.");
             Console.ReadKey(true);
         }
 

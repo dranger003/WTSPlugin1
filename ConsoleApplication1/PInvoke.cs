@@ -163,5 +163,21 @@ namespace ConsoleApplication1
             UInt32 nNumberOfBytesToRead,
             out UInt32 lpNumberOfBytesRead,
             IntPtr lpOverlapped);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern Boolean GetOverlappedResult(
+            IntPtr hFile,
+            ref NativeOverlapped lpOverlapped,
+            out UInt32 lpNumberOfBytesTransferred,
+            bool bWait
+        );
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern IntPtr CreateEvent(
+            IntPtr lpEventAttributes,
+            bool bManualReset,
+            bool bInitialState,
+            String lpName
+        );
     }
 }
